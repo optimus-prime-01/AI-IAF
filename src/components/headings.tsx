@@ -8,7 +8,7 @@ interface HeadingsProps {
     return (
       <div>
         <h2
-          className={`text-2xl md:text-3xl text-gray-800 font-semibold font-sans ${
+          className={`text-2xl md:text-3xl text-white  font-semibold font-sans ${
             isSubHeading ? "text-lg md:text-xl" : ""
           }`}
         >
