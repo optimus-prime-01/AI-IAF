@@ -51,8 +51,8 @@ function ElegantShape({
           ease: "easeInOut",
         }}
         style={{
-          width,
-          height,
+          width: `clamp(${width * 0.5}px, ${width * 0.8}px, ${width}px)`,
+          height: `clamp(${height * 0.5}px, ${height * 0.8}px, ${height}px)`,
         }}
         className="relative"
       >
@@ -98,7 +98,7 @@ export default function AIBoostHero() {
           height={140}
           rotate={12}
           gradient="from-gray-200/[0.15]"
-          className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
+          className="left-[-20%] sm:left-[-10%] md:left-[-5%] top-[10%] sm:top-[15%] md:top-[20%]"
         />
 
         <ElegantShape
@@ -107,7 +107,7 @@ export default function AIBoostHero() {
           height={120}
           rotate={-15}
           gradient="from-gray-300/[0.15]"
-          className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
+          className="right-[-10%] sm:right-[-5%] md:right-[0%] top-[65%] sm:top-[70%] md:top-[75%]"
         />
 
         <ElegantShape
@@ -116,7 +116,7 @@ export default function AIBoostHero() {
           height={80}
           rotate={-8}
           gradient="from-gray-100/[0.15]"
-          className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+          className="left-[0%] sm:left-[5%] md:left-[10%] bottom-[0%] sm:bottom-[5%] md:bottom-[10%]"
         />
 
         <ElegantShape
@@ -125,21 +125,22 @@ export default function AIBoostHero() {
           height={60}
           rotate={20}
           gradient="from-gray-400/[0.15]"
-          className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
+          className="right-[10%] sm:right-[15%] md:right-[20%] top-[5%] sm:top-[10%] md:top-[15%]"
         />
       </div>
 
-      <div className="container relative z-10 px-4 mx-auto md:px-6 mt-[-80px]">
+      <div className="container relative z-10 px-4 mx-auto md:px-6 mt-[-40px] sm:mt-[-60px] md:mt-[-80px]">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div custom={0} variants={fadeUpVariants} initial="hidden" animate="visible">
             <motion.h1
               style={{
-                fontSize: "6rem",
+                fontSize: "clamp(2.5rem, 8vw, 6rem)",
                 fontWeight: "bold",
                 fontFamily: "sans-serif",
                 background: "linear-gradient(to bottom, #1a1a1a, #333)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
+                lineHeight: "1.1",
               }}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -150,12 +151,13 @@ export default function AIBoostHero() {
 
             <motion.h2
               style={{
-                fontSize: "5rem",
+                fontSize: "clamp(2rem, 6vw, 5rem)",
                 fontWeight: "bold",
                 background: "linear-gradient(to right, #444, #666, #888)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                marginTop: "10px",
+                marginTop: "clamp(5px, 2vw, 10px)",
+                lineHeight: "1.2",
               }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -166,7 +168,7 @@ export default function AIBoostHero() {
           </motion.div>
 
           <motion.div custom={1} variants={fadeUpVariants} initial="hidden" animate="visible">
-            <p className="max-w-xl px-4 mx-auto mb-8 text-lg font-light leading-relaxed tracking-wide text-gray-600 sm:text-xl md:text-2xl">
+            <p className="max-w-xl px-2 mx-auto mt-4 mb-6 text-base font-light leading-relaxed tracking-wide text-gray-600 sm:px-4 sm:mt-6 sm:mb-8 sm:text-lg md:text-xl lg:text-2xl">
               Boost your interview skills with AI-driven insights. Prepare smarter, practice better, and stand out!
             </p>
           </motion.div>
@@ -174,7 +176,7 @@ export default function AIBoostHero() {
           <motion.div custom={2} variants={fadeUpVariants} initial="hidden" animate="visible">
             <Link to={userId ? "/generate" : "/signin"}>
               <Button
-                className="relative px-6 py-3 text-lg font-semibold text-white transition-all duration-300 bg-gray-800 rounded-full hover:bg-gray-700"
+                className="relative px-4 py-2 text-base font-semibold text-white transition-all duration-300 bg-gray-800 rounded-full sm:px-6 sm:py-3 sm:text-lg hover:bg-gray-700"
                 style={{
                   boxShadow: "0 0 15px #00ff00, 0 0 30px #00ff00",
                   border: "2px solid #00ff00",
